@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'maven'
+}
+
+group 'com.wdeath.lib'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+uploadArchives{
+    repositories{
+        mavenDeployer{
+            repository(url: mavenLocal().getUrl())
+        }
+    }
+}
+
+dependencies {
+}

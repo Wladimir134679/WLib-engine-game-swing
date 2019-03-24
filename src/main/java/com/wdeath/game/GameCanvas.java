@@ -2,6 +2,8 @@ package com.wdeath.game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 public class GameCanvas {
@@ -14,6 +16,14 @@ public class GameCanvas {
         canvas.setPreferredSize(new Dimension(w, h));
         canvas.setFocusable(true);
         buf = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+    }
+
+    public void addMouseListener(MouseListener listener){
+        canvas.addMouseListener(listener);
+    }
+
+    public void addKeyListener(KeyListener listener){
+        canvas.addKeyListener(listener);
     }
 
     public Graphics2D getGraphics(){

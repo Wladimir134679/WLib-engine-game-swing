@@ -24,7 +24,7 @@ public class ThreadEngine implements Runnable {
 //        app.getCanvas().getGraphics().setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         screen.open();
 
-        while(true){
+        while(app.getWindow().getFrame().isVisible()){
             clearCanvas(app.getCanvas().getGraphics());
             screen.draw(app.getCanvas());
             app.getCanvas().repaint();
@@ -38,7 +38,7 @@ public class ThreadEngine implements Runnable {
 
     private void clearCanvas(Graphics2D g){
         Color c = g.getColor();
-        g.setColor(Color.WHITE);
+        g.setColor(app.getConfig().colorBackground);
         g.fillRect(0, 0, app.getConfig().width, app.getConfig().height);
         g.setColor(c);
     }

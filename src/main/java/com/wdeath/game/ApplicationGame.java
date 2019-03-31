@@ -13,7 +13,7 @@ public class ApplicationGame {
     public ApplicationGame(AppConfig config, GameScreen game){
         this.config = config;
         this.screen = game;
-        window = new GameWindow(config.title);
+        window = new GameWindow(config.title, this);
         canvas = new GameCanvas(config.width, config.height);
         threadEngine = new ThreadEngine(this);
     }
@@ -35,4 +35,6 @@ public class ApplicationGame {
     public GameScreen getScreen(){
         return screen;
     }
+
+    public GameWindow getWindow(){return window;}
 }
